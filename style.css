@@ -7,53 +7,91 @@
   src: url("https://fonts.googleapis.com/css2?family=Amiri&display=swap");
 }
 body {
-  background-color: #dddddb;
+  margin: 0;
+  padding: 0;
+}
+#front-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
-#top {
-  font-family: Playfair Display;
-  font-size: 1.5vh;
-  color: #000000;
-  text-align: center;
-  background-color: #d4b63c;
-  width: 20vw;
-  line-height: 3vh;
-  margin-left: auto;
-  margin-right: auto;
+#left {
+  background-color: #EAA148;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
-#title {
-  font-family: Playfair Display;
-  font-size: 5vh;
-  color: #000000;
+#logo-box {
+  background-color: #ffffff;
+  width: 27vh;
+  height: 27vh;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 40vh;
+  text-decoration: none;
+  transition: transform 330ms ease-in-out;
+}
+#logo-box:hover {
+  transform: scale(1.1);
+}
+
+#logo-text {
+  color: black;
   text-align: center;
+  font-family: Playfair Display;
+  font-size: 5.7vh;
+  text-align: left;
   font-weight: 900;
-  font-style: italic;
-  background-color: #d4b63c;
-  width: 20vw;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 3vh;
+  line-height: 7vh;
 }
-#date {
-  font-family: Playfair Display;
-  font-size: 1.2vh;
-  line-height: 2vh;
-  color: #000000;
+.button {
+  background-color: white;
+  color: black;
   text-align: center;
-  background-color: #d4b63c;
-  width: 20vw;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-block;
+  font-size: 3vh;
+  padding: 1.1vh;
+  border: none;
+  text-decoration: none;
+  font-family: Playfair Display;
+  font-weight: 900;
+  transition: transform 230ms ease-in-out;
+}
+.button:hover {
+  transform: scale(1.1);
+}
+#right {
+  background-color: #ffffff;
+  width: 50vw;
+}
+#recent {
+  font-weight: 900;
+  transform-origin: 0 0;
+  transform: rotate(270deg);
+  left: 50vw;
+  font-size: 8vh;
+  bottom: 20vw;
+  position: fixed;
 }
 .heading {
   font-family: Playfair Display;
   font-size: 6vh;
   color: #000000;
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
   width: 35vw;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2vh;
+  margin-top: 8vh;
 }
 .subheading {
   font-family: Amiri;
@@ -67,7 +105,7 @@ body {
 }
 .authors {
   font-family: Amiri;
-  font-size: 2vh;
+  font-size: 2.3vh;
   color: #000000;
   text-align: left;
   font-weight: 900;
@@ -85,97 +123,78 @@ body {
   margin-right: auto;
   margin-top: 1vh;
 }
-#page-end {
-  font-size: 1.5vh;
-  color: #000000;
-  text-align: center;
+
+/*home specific*/
+#home-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #EAA148;
   width: 100vw;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4vh;
+  height: 100vh;
 }
-.break {
-  color: black;
-  width: 30vw;
-  height: 20vh;
-  margin-left: auto;
-  margin-right: auto;
+#home-wrapper-two {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50vw;
+}
+/*archive specific*/
+#archive-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #EAA148;
+  width: 100vw;
+  height: 30vh;
 }
 /*mobile optimization internal stylesheet*/
 @media only screen and (max-device-width: 480px) {
-  #top {
-    font-family: Playfair Display;
-    font-size: 1.5vh;
-    color: #000000;
-    text-align: center;
-    background-color: #d4b63c;
-    width: 70vw;
-    line-height: 3vh;
-    margin-left: auto;
-    margin-right: auto;
+  #front-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  #title {
-    font-family: Playfair Display;
-    font-size: 5vh;
-    color: #000000;
-    text-align: center;
-    font-weight: 900;
-    font-style: italic;
-    background-color: #d4b63c;
-    width: 70vw;
-    margin-left: auto;
-    margin-right: auto;
+  #left {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: auto;
+    position: relative;
   }
-  #date {
-    font-family: Playfair Display;
-    font-size: 1.2vh;
-    line-height: 2vh;
-    color: #000000;
-    text-align: center;
-    background-color: #d4b63c;
-    width: 70vw;
-    margin-left: auto;
-    margin-right: auto;
+  #logo-box {
+    top: 1vh;
+    background-color: #ffffff;
+    width: 27vh;
+    height: 27vh;
+    text-decoration: none;
+    transition: transform 330ms ease-in-out;
+  }
+  #right {
+    background-color: #ffffff;
+    width: 100vw;
+  }
+  #recent {
+    opacity: 0;
   }
   .heading {
-    font-family: Playfair Display;
-    font-size: 5vh;
-    color: #000000;
-    text-align: left;
-    font-weight: 500;
     width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2vh;
   }
   .subheading {
-    font-family: Amiri;
-    font-size: 3vh;
-    color: #000000;
-    text-align: left;
     width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1vh;
   }
   .authors {
-    font-family: Amiri;
-    font-size: 2vh;
-    color: #000000;
-    text-align: left;
-    font-weight: 900;
     width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1vh;
   }
   .article {
-    font-size: 2.5vh;
-    color: #000000;
-    text-align: left;
     width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1vh;
+  }
+  #home-wrapper-two {
+    width: 95vw;
   }
 }
